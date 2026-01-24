@@ -1,0 +1,1 @@
+print("to write comments in python we use '#' ")   #like this
