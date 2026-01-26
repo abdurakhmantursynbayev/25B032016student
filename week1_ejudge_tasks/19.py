@@ -1,0 +1,5 @@
+a = input()
+target = input()
+replacement = input()
+a = a.replace(target, replacement)
+print(a)
