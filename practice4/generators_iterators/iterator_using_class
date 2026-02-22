@@ -1,0 +1,22 @@
+class the_string:
+    def __init__(self):
+        self.str = "abdurakhman"
+        self.i = 0
+    def getin(self):
+        self.str = input("input: ")
+    def __iter__(self):
+        return self
+    def __next__(self):
+        x = self.i
+        if x < len(self.str):
+            self.i += 1
+            return self.str[x]
+        else:
+            raise StopIteration
+        
+
+new = the_string()
+new.getin()
+b = iter(new)
+for i in b:
+    print(i, end = " ")
