@@ -13,10 +13,10 @@ D = pow(b, 2) - 4 * a * c
 if D <= 0:
     print(f"{0:.10f}")
 else:
-    t1 = (-b + sqrt(D)) / (2 * a)
-    t2 = (-b - sqrt(D)) / (2 * a)
-    left = max(0, min(t1, t2))
-    right = min(1, max(t1, t2))
+    l1 = (-b + sqrt(D)) / (2 * a)
+    l2 = (-b - sqrt(D)) / (2 * a)
+    left = max(0, min(l1, l2))
+    right = min(1, max(l1, l2))
     ab = sqrt((dx) ** 2 + (dy) ** 2)    
     if left < right:
         length = (right - left) * ab
