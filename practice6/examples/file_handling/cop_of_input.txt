@@ -1,0 +1,3 @@
+it's file
+input.txt
+this line is appended
