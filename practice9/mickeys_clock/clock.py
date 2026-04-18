@@ -2,7 +2,7 @@ from datetime import datetime
 def angle(now):
     minute = now.minute
     second = now.second
-    second_angle = second * 6
+    second_angle = second * 6 + 0.3
     minute_angle = minute * 6 + second * 0.1
     return (minute_angle, second_angle)
 
