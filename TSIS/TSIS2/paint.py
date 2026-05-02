@@ -13,9 +13,9 @@ from tools import (
 )
 
 
-# --------------------------------------------------
+
 # INITIALIZATION
-# --------------------------------------------------
+
 pygame.init()
 
 WIDTH, HEIGHT = 900, 650
@@ -25,18 +25,18 @@ pygame.display.set_caption("TSIS2 Paint")
 clock = pygame.time.Clock()
 
 
-# --------------------------------------------------
+
 # CANVAS LAYER
-# --------------------------------------------------
+
 # base_layer stores permanent drawing.
 # screen is used to show base_layer + temporary preview + UI.
 base_layer = pygame.Surface((WIDTH, HEIGHT))
 base_layer.fill("black")
 
 
-# --------------------------------------------------
+
 # COLORS
-# --------------------------------------------------
+
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
@@ -56,16 +56,16 @@ COLORS = {
 }
 
 
-# --------------------------------------------------
+
 # FONTS
-# --------------------------------------------------
+
 font = pygame.font.SysFont("Verdana", 18)
 small_font = pygame.font.SysFont("Verdana", 15)
 
 
-# --------------------------------------------------
+
 # VARIABLES
-# --------------------------------------------------
+
 current_tool = "pencil"
 current_color = RED
 brush_size = 5
@@ -85,9 +85,9 @@ text_pos = (0, 0)
 message = ""
 
 
-# --------------------------------------------------
+
 # DRAW UI
-# --------------------------------------------------
+
 def draw_ui():
     # UI is drawn only on screen, not on base_layer.
     info_1 = "P-Pencil  L-Line  R-Rect  O-Circle  S-Square  T-RightTri  Q-EqTri  H-Rhombus"
@@ -111,9 +111,9 @@ def draw_ui():
         screen.blit(msg_text, (10, 120))
 
 
-# --------------------------------------------------
+
 # DRAW SHAPES
-# --------------------------------------------------
+
 def draw_shape(surface):
     # This function draws selected shape on given surface.
     # For preview, surface is screen.
@@ -192,9 +192,9 @@ def is_preview_tool():
     ]
 
 
-# --------------------------------------------------
+
 # MAIN LOOP
-# --------------------------------------------------
+
 running = True
 
 while running:
@@ -202,15 +202,15 @@ while running:
 
     for event in pygame.event.get():
 
-        # -------------------------------
+
         # QUIT
-        # -------------------------------
+
         if event.type == pygame.QUIT:
             running = False
 
-        # -------------------------------
+
         # KEYBOARD EVENTS
-        # -------------------------------
+
         if event.type == pygame.KEYDOWN:
 
             # If text mode is active, keyboard writes text.
@@ -309,9 +309,9 @@ while running:
                 elif event.key == pygame.K_9:
                     current_color = WHITE
 
-        # -------------------------------
+
         # MOUSE BUTTON DOWN
-        # -------------------------------
+
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             start_x, start_y = event.pos
             curr_x, curr_y = event.pos
@@ -330,9 +330,9 @@ while running:
             else:
                 drawing = True
 
-        # -------------------------------
+
         # MOUSE MOTION
-        # -------------------------------
+
         if event.type == pygame.MOUSEMOTION:
             curr_x, curr_y = event.pos
 
@@ -362,9 +362,9 @@ while running:
 
                 prev_x, prev_y = curr_x, curr_y
 
-        # -------------------------------
+
         # MOUSE BUTTON UP
-        # -------------------------------
+
         if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             curr_x, curr_y = event.pos
 
@@ -374,9 +374,9 @@ while running:
 
             drawing = False
 
-    # --------------------------------------------------
+
     # DRAW FRAME
-    # --------------------------------------------------
+
 
     # Draw saved canvas
     screen.blit(base_layer, (0, 0))
