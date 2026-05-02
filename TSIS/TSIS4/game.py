@@ -27,7 +27,7 @@ def run_game(username):
     show_grid = settings["grid"]
 
     # Optional music
-    if settings["sound"] and os.path.exists("sounds/background.mp3"):
+    if settings["sound"] and os.path.exists("sounds/Orynkhan - Qazir bolmasa.mp3"):
         pygame.mixer.init()
         pygame.mixer.music.load("sounds/background.mp3")
         pygame.mixer.music.play(-1)

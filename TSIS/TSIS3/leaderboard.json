@@ -18,6 +18,12 @@
         "coins": 24
     },
     {
+        "name": "sd[pf",
+        "score": 265,
+        "distance": 859,
+        "coins": 18
+    },
+    {
         "name": "sdf",
         "score": 190,
         "distance": 501,
@@ -30,6 +36,18 @@
         "coins": 9
     },
     {
+        "name": "ajkfnak",
+        "score": 64,
+        "distance": 247,
+        "coins": 4
+    },
+    {
+        "name": "asrjhfbkjvnk",
+        "score": 48,
+        "distance": 186,
+        "coins": 3
+    },
+    {
         "name": "\u043a\u0432\u043f\u0430",
         "score": 31,
         "distance": 215,
@@ -40,23 +58,5 @@
         "score": 26,
         "distance": 166,
         "coins": 1
-    },
-    {
-        "name": "1",
-        "score": 26,
-        "distance": 163,
-        "coins": 2
-    },
-    {
-        "name": "nh",
-        "score": 21,
-        "distance": 119,
-        "coins": 1
-    },
-    {
-        "name": "vghj",
-        "score": 12,
-        "distance": 122,
-        "coins": 0
     }
 ]

@@ -6,9 +6,9 @@ from config import load_config
 from connect import connect
 
 
-# --------------------------------------------------
+
 # DATABASE CONNECTION
-# --------------------------------------------------
+
 def db():
     # Load database settings from database.ini
     config = load_config()
@@ -17,9 +17,9 @@ def db():
     return connect(config)
 
 
-# --------------------------------------------------
+
 # RUN SQL FILE
-# --------------------------------------------------
+
 def run_sql_file(filename):
     # This function runs schema.sql or procedures.sql
     conn = db()
@@ -42,9 +42,9 @@ def run_sql_file(filename):
     print(filename, "executed successfully")
 
 
-# --------------------------------------------------
+
 # PRINT RESULT ROWS
-# --------------------------------------------------
+
 def print_rows(rows):
     # Simple function to print query results
     if not rows:
@@ -54,9 +54,9 @@ def print_rows(rows):
             print(row)
 
 
-# --------------------------------------------------
+
 # ADD CONTACT
-# --------------------------------------------------
+
 def add_contact():
     # Ask user for contact data
     name = input("Name: ")
@@ -97,9 +97,9 @@ def add_contact():
     print("Contact added")
 
 
-# --------------------------------------------------
+
 # ADD PHONE
-# --------------------------------------------------
+
 def add_phone():
     # Add another phone number to existing contact
     name = input("Name: ")
@@ -122,9 +122,9 @@ def add_phone():
     print("Phone added")
 
 
-# --------------------------------------------------
+
 # MOVE CONTACT TO GROUP
-# --------------------------------------------------
+
 def move_group():
     # Change contact group
     name = input("Name: ")
@@ -146,9 +146,9 @@ def move_group():
     print("Contact moved to group")
 
 
-# --------------------------------------------------
+
 # SEARCH CONTACTS
-# --------------------------------------------------
+
 def search():
     # Search by name, email, group, or phone
     query = input("Search: ")
@@ -169,9 +169,9 @@ def search():
     conn.close()
 
 
-# --------------------------------------------------
+
 # FILTER BY GROUP
-# --------------------------------------------------
+
 def filter_group():
     # Show contacts only from selected group
     group = input("Group: ")
@@ -195,9 +195,9 @@ def filter_group():
     conn.close()
 
 
-# --------------------------------------------------
+
 # SEARCH BY EMAIL
-# --------------------------------------------------
+
 def search_email():
     # Partial email search.
     # Example: gmail finds all contacts with gmail in email.
@@ -222,9 +222,9 @@ def search_email():
     conn.close()
 
 
-# --------------------------------------------------
+
 # SORT CONTACTS
-# --------------------------------------------------
+
 def sort_contacts():
     # User chooses sorting type
     print("Sort by:")
@@ -264,9 +264,9 @@ def sort_contacts():
     conn.close()
 
 
-# --------------------------------------------------
+
 # PAGINATION
-# --------------------------------------------------
+
 def paginate():
     # This function allows user to navigate pages:
     # next, prev, quit
@@ -306,9 +306,9 @@ def paginate():
     conn.close()
 
 
-# --------------------------------------------------
+
 # SHOW ALL CONTACTS
-# --------------------------------------------------
+
 def show_all():
     # Show all contacts with group and phone
     conn = db()
@@ -329,9 +329,9 @@ def show_all():
     conn.close()
 
 
-# --------------------------------------------------
+
 # EXPORT TO JSON
-# --------------------------------------------------
+
 def export_json():
     # Export all contacts with phones and group to contacts.json
     conn = db()
@@ -378,9 +378,9 @@ def export_json():
     print("Exported to contacts.json")
 
 
-# --------------------------------------------------
+
 # DELETE CONTACT
-# --------------------------------------------------
+
 def delete_contact(cur, name):
     # Delete contact by name.
     # Phones are deleted automatically because ON DELETE CASCADE.
@@ -390,9 +390,9 @@ def delete_contact(cur, name):
     )
 
 
-# --------------------------------------------------
+
 # INSERT CONTACT FROM DICTIONARY
-# --------------------------------------------------
+
 def insert_contact(cur, item):
     # This helper is used for JSON and CSV import.
     name = item["name"]
@@ -424,9 +424,9 @@ def insert_contact(cur, item):
             )
 
 
-# --------------------------------------------------
+
 # IMPORT FROM JSON
-# --------------------------------------------------
+
 def import_json():
     # Read contacts from contacts.json
     with open("contacts.json", "r", encoding="utf-8") as file:
@@ -470,9 +470,9 @@ def import_json():
     print("JSON imported")
 
 
-# --------------------------------------------------
+
 # IMPORT FROM CSV
-# --------------------------------------------------
+
 def import_csv():
     # CSV should have columns:
     # name,email,birthday,group,phone,phone_type
@@ -530,9 +530,9 @@ def import_csv():
     print("CSV imported")
 
 
-# --------------------------------------------------
+
 # MAIN MENU
-# --------------------------------------------------
+
 def menu():
     while True:
         print("""
